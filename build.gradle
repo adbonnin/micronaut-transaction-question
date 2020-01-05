@@ -20,6 +20,9 @@ configurations {
 }
 
 dependencies {
+    compileOnly "io.micronaut.data:micronaut-data-processor:$micronautDataVersion"
+    compile "io.micronaut.data:micronaut-data-jdbc:$micronautDataVersion"
+
     compileOnly platform("io.micronaut:micronaut-bom:$micronautVersion")
     compileOnly "io.micronaut:micronaut-inject-groovy"
     implementation platform("io.micronaut:micronaut-bom:$micronautVersion")

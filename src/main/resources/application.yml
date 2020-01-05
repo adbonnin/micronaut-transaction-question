@@ -4,4 +4,16 @@ micronaut:
     name: issue
 
 ---
-datasources.default: {}
+datasources:
+  default:
+    url: jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password: ''
+    driverClassName: 'org.h2.Driver'
+    dialect: 'H2'
+
+---
+liquibase:
+  datasources:
+    default:
+      change-log: 'classpath:db/liquibase-changelog.xml'
